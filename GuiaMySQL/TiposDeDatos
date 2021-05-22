@@ -1,0 +1,34 @@
+TIPOS DE DATOS
+
+Numericos: Los tipos de datos numericos los podemos dividir en dos gupos, enteros Y flotantes.
+
+Enteros:
+        INT --> Almacena numeros enteros en un rango de -2147483648 a 2147483647.
+                Si agregamos el atributo UNSIGNED el rango cambia y va desde 0 a 429.4967.295
+                El tipo de dato INTEGER es sinonimo de INT en MySQL.
+flotantes:
+
+
+Fecha:
+        YEAR --> Almacena rango de años, acepta varios formatos y en de acuerdo a este adquiere el rango:
+                -4 digitos en una cadena -> Rango desde '1901' a '2155'.
+                -4 digitos como numero -> Rango desde 1901 a 2155.
+                -1 o 2 digitos en una cadena -> Rango desde '0' a '99', MySQL convierte los numeros del 0 a
+                                                69 al rango del 2000 al 2069, y convierte los numeros del 70
+                                                a 99 al rango del 1970 al 1999.
+                -1 o 2 digitos como numero -> Rango desde '0' a '99', MySQL convierte los numeros del 1 a 69
+                                              al rango del 2001 al 2069, y convierte los numeros del 70 a 99
+                                              al rango del 1970 al 1999, el numero 0 lo interpreta como 0000,
+                                              para que MySQL interprete el numero 0 como el año 2000 debemos
+                                              ingresarlo como cadena de esta forma '0' o esta '00'.
+                -A traves de la funcion NOW() -> Se le puede traspasar directamente el valor de esta funcion
+                                                 con la que nos almacenara el año actual. CURRENT_TIMESTAMP(),
+                                                 LOCALTIME, LOCALTIME(), LOCALTIMESTAMP, y LOCALTIMESTAMP(),
+                                                 nos devuelve elmismo valor.
+
+
+Texto o Cadena
+        VARCHAR --> Almacena una cadena de texto de longitud variable, esta puede contener desde 0 a 255
+                    caracteres. El numero maximo de caracteres que podra contener la columna lo establecemos
+                    al definir el tipo de dato. VARCHAR(50)-> En este caso la cadena puede tener un largo
+                    maximo de 50 caracteres
